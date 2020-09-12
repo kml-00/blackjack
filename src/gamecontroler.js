@@ -27,11 +27,7 @@ class gameControler {
         this.gameview.bind50Button(this.bet50);
         this.gameview.bind100Button(this.bet100);
         this.gameview.bindToken(this.undoBet);
-     
-        
-        
-        
-       
+      
     }
 
     /*--------------- game buttons ----------------------------*/
