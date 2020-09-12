@@ -1,0 +1,24 @@
+{
+  "name": "blackjack",
+  "version": "1.0.1",
+  "description": "Simple Blackjack game written in java script",
+  "main": "blackjack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kml-00/blackjack.git"
+  },
+  "author": "kml",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kml-00/blackjack/issues"
+  },
+  "homepage": "https://github.com/kml-00/blackjack#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}

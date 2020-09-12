@@ -1,0 +1,288 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+html {
+
+}
+
+.cards {
+    margin: 2px;
+}
+.game-screen {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.3);
+    position:fixed;
+    z-index: 299;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: visibility 0s, opacity 0.5s linear;
+    animation-name: result;
+    animation-duration: 4s;  
+    animation-fill-mode: forwards;
+}
+
+.gamestart {
+    color: #fff;
+    position: relative;
+    background-color: #000;
+}
+
+.gameMessage {
+    position: absolute;
+    top:100px;
+    left:500px;
+    font-size: 50px;
+    color:#fff;
+}
+
+.gamecards {
+ width: 700px;
+ height: 350px;
+ border:1px solid #fff;
+ border-radius: 5px;
+}
+
+.text {
+    font-family: 'Red Rose', cursive;
+    font-size: 60px;
+    position: absolute;
+    left: 10px;
+    
+}
+
+#gamecard_1 {
+    position: absolute;
+    right: 100px;
+    top:50px;
+}
+#gamecard_2 {
+    position: absolute;
+    right: 60px;
+    top:50px;
+    transform: rotate(20deg);
+
+}
+
+.startgame, .playagain {
+    position: absolute;
+    left: 40px;
+    top:250px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+    
+}
+
+.startgame {
+    display: inline-block;
+}
+
+
+@keyframes result {
+    from {opacity:  0;}
+    to {opacity:  1; }
+  }
+
+
+
+
+.message {
+    position: absolute;
+    left: 40px;
+    top:120px;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    display: none;
+    font-size: 40px;
+    
+}
+
+.game-table {
+    width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+    padding: 5px 0;
+    background-color: #0F6C2B;
+    position: relative;
+}
+
+
+.croupier, .player{ 
+    width: 208px;
+    height: 287px;
+    
+    
+}
+.croupier {
+    position: absolute;
+    top:40px;
+    left: 50px;
+}
+
+.player{ 
+    position: absolute;
+    top:600px;
+    left: 50px;
+}
+
+
+.croupier_score_box,.player_score_box {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    font-size: 30px; 
+}
+
+.actutual_bet {
+    position: absolute;
+    top:350px;
+    left: 500px;
+    height: 250px;
+    width: 250px;
+   
+}
+
+
+
+.ntoken10 {
+    position: absolute;
+    right: 0px;
+    top:0px;
+}
+
+.ntoken20 {
+    position: absolute;
+    right: 75px;
+    top:0px;
+}
+.ntoken50 {
+    position: absolute;
+    right: 150px;
+    top:0px;
+}
+
+.ntoken100 {
+    position: absolute;
+    right: 225px;
+    top:0px;
+}
+
+#betValue
+{
+    position: absolute;
+    left: 500px;
+    top:320px;
+    font-size: 30px; 
+    color:#fff;  
+}
+
+#money {
+    position: absolute;
+    right: 150px;
+    top:750px;
+    font-size: 30px; 
+    color:#fff;
+}
+
+.croupier_score_box {
+    top:300px;
+    left: 100px;
+}
+.player_score_box {
+    bottom:300px;
+    left: 100px;
+    
+}
+#croupier_score, #player_score {
+    width: 20px;
+    height: 20px ;
+    color: #fff;
+    margin: 0 auto;
+    padding: 10px 0;
+   
+}
+
+.cards_deck {
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 900px;
+    padding: 15px;
+    width: 208px;
+    height: 287px;
+    border:1px solid white;
+    border-radius: 15px;
+}
+
+.bet {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    margin-top:300px
+    
+    
+}
+
+
+
+
+
+
+
+.controls {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    
+    
+}
+
+.controls button {
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 0;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+
+.card {
+    position: absolute;;
+    z-index: 5;
+}
+.front, .back {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: transform .8s ease;
+}
+
+.front img {
+    border:1px solid #000;
+}
+
+
+.visable {
+    visibility:visible;
+}
+
+.hidden {
+    visibility:hidden;
+}
+
+
+
+

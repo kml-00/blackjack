@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="How to build a black jack game in java script">
+    <meta name="keywords" content="Black Jack game in JavaScript">
+    <meta name="author" content="kml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Black Jack Game</title>
+</head>
+<body>
+    <div id="gamemenu" class="game-screen">
+        <div class="gamestart">
+            <div class="text">
+                BLACKJACK
+            </div>
+            <div class="gamecards">
+                <img id="gamecard_1" src="assets/cards/A-KR.jpg">
+                <img id="gamecard_2" src="assets/cards/K-KR.jpg">
+            </div>
+            <div id="message" class="message">START GAME</div>
+            <div id="startBtn" class="startgame" >START GAME</div>
+            <div id="againBtn" class="playagain" >PLAY AGAIN</div>   
+            
+        </div>
+    </div> 
+    <div class="game-table">
+        
+            <div class="croupier">
+                <div class="croupier_score_box">
+                    <div id="croupier_score">
+
+                    </div>
+                </div>
+            </div>
+            <div class="gameMessage"></div>
+            <div id="deck" class="cards_deck">
+                
+            </div>
+            <div class="player">
+                <div class="player_score_box">
+                    <div id="player_score">
+
+                    </div>
+                </div>
+            </div>
+            <div id="betValue"></div>
+            <div id="player_bet" class="actutual_bet">
+               
+            </div>
+            <div id="betContainer" class="bet">
+                <img id="dol10" src="assets/token/10.png" alt="" class="token10">
+                
+                <img id="dol20" src="assets/token/20.png" alt="" class="token20">
+               
+                <img id="dol50" src="assets/token/50.png" alt="" class="token50">
+                <img id="dol100"src="assets/token/100.png" alt="" class="token100">
+                <div id="betToken">
+
+                </div>
+                
+            </div>
+            <div id="money">
+                2500
+            </div>
+            <div class="controls">
+                <button id="betBtn" class="betbtn">DEAL</button>
+                <button id="htiBtn" class="hit">HIT</button>
+                <button id="standBtn" class="stand">STAND</button>
+            </div>
+        </div>
+    
+    <script  src="dist/blackjack.js"></script>  
+</body>
+</html>
