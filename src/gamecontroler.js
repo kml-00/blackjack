@@ -5,14 +5,14 @@ class gameControler {
         this.cpu=cpu
         this.gameview = gameview
         this.shuffledCards=[]
-        this.betMoney=2500
+        this.betMoney=0
         this.actualBet=0
         this.token=[]
         this.tokenLocation={token10:[{left:'900px',top:'642px'},{left:'525px',top:'400px'}],token20:[{left:'970px',top:'642px'},{left:'600px',top:'400px'}],
         token50:[{left:'1040px',top:'642px'},{left:'550px',top:'500px'}],token100:[{left:'1110px',top:'642px'},{left:'625px',top:'500px'}]}
         this.tokenBetLocation={token10:[{left:'525px',top:'400px'},{left:'900px',top:'642px'}],token20:[{left:'600px',top:'400px'},{left:'970px',top:'642px'}],
         token50:[{left:'550px',top:'500px'},{left:'1040px',top:'642px'}],token100:[{left:'625px',top:'500px'},{left:'1110px',top:'642px'}]}
-        this.gamestate=['YOU LOSE','YOU WIN','IT IS DRAW']
+        this.gamestate=['YOU LOSE','YOU WIN','IT IS DRAW','OUT OF CREDITS']
         this.deck = ["2-PK", "3-PK", "4-PK", "5-PK", "6-PK", "7-PK", "8-PK", "9-PK", "10-PK", "J-PK", "Q-PK", "K-PK", "A-PK",
         "2-KA", "3-KA", "4-KA", "5-KA", "6-KA", "7-KA", "8-KA", "9-KA", "10-KA", "J-KA", "Q-KA", "K-KA", "A-KA",
         "2-TR", "3-TR", "4-TR", "5-TR", "6-TR", "7-TR", "8-TR", "9-TR", "10-TR", "J-TR", "Q-TR", "K-TR", "A-PK",
@@ -66,19 +66,14 @@ class gameControler {
             this.getCardFromDeck(this.cpu,true);
             this.cpu.calculateCards();
             this.gameview.showPlayersScore(this.cpu);
-            if(this.cpu.currentScore > 21) 
-            {
-                
-                this.gameview.gameScreen(this.gamestate[1]);
-                
-            } 
+         
         }
         this.gameResult();
     }
 
     startButton = gameStart => 
     {  
-        this.init();
+        this.init('new');
     }
 
     againButton = playagain => 
@@ -199,14 +194,13 @@ class gameControler {
     {
         if(this.actualBet == 0)
         {
-             console.log("no bet placed");
+             
              this.gameview.betValueVisiblility(false);
              this.gameview.gameMessageVisiblility(true,"Place your bets");
              this.gameview.buttonsVisability(false,false,false);
              this.gameview.scoreVisability(false);
         }
         else {
-            console.log("bet placed");
             this.gameview.betValueVisiblility(true);
             this.gameview.gameMessageVisiblility(false);
             this.gameview.buttonsVisability(true,false,false);
@@ -224,7 +218,7 @@ class gameControler {
             {
                 //you lose
                 
-                this.gameview.gameScreen(this.gamestate[0]);
+                (this.betMoney==0)?this.gameview.gameScreen(this.gamestate[3]):this.gameview.gameScreen(this.gamestate[0]);
                 
             }
             if(this.cpu.currentScore===this.player.currentScore)
@@ -241,7 +235,6 @@ class gameControler {
                 //You win 
                 
                 this.betMoney = this.betMoney + (this.actualBet * 2);
-                
                 this.gameview. betMoneyUpdate(this.betMoney);
                 this.gameview.gameScreen(this.gamestate[1]);
                
@@ -252,14 +245,16 @@ class gameControler {
         else {
             if(this.cpu.currentScore>21 )
             {
-                    console.log(this.actualBet * 2);
+                    
                     this.betMoney = this.betMoney + this.actualBet * 2;
                     this.gameview. betMoneyUpdate(this.betMoney);
                     this.gameview.gameScreen(this.gamestate[1]);
             }
             if(this.player.currentScore>21 )
             {
-                    this.gameview.gameScreen(this.gamestate[0]);
+                   (this.betMoney==0)?this.gameview.gameScreen(this.gamestate[3]):this.gameview.gameScreen(this.gamestate[0]);
+                  
+                    
             }
         }
         
@@ -294,7 +289,10 @@ class gameControler {
         return img;
     }
 
-    init() {
+    init(state) {
+        
+        (state=='new')?this.betMoney=2500:this.betMoney= this.betMoney;
+        this.gameview.betMoneyUpdate(this.betMoney);
         this.shuffleDeck()
         this.clearOldData();
         this.gameview.backCard();

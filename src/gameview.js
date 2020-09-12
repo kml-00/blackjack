@@ -194,8 +194,18 @@ class gameView {
     {
         this.gamescreen.style.display ='flex';
         this.message.style.display = 'block';
-        this.startButton.style.display = "none";
-        this.againButton.style.display = "inline-block";
+        if(gamestate==='OUT OF CREDITS')
+        {
+            this.startButton.style.display = "inline-block";
+            this.againButton.style.display = "none";
+        }
+        else {
+            this.againButton.style.display = "inline-block";
+            this.startButton.style.display = "none";
+        }
+        
+        
+        
         this.message.innerHTML = gamestate;
         
     }
