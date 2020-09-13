@@ -24,9 +24,9 @@ If you would like to make some modification in the game you should donwload and 
 
  then install via node terminal gulp, gulp-concat,gulp-uglify-es
 
- -npm install gulp
- -npm install gulp-concat
- -npm install gulp-uglify-es
+ -npm install gulp<br />
+ -npm install gulp-concat<br />
+ -npm install gulp-uglify-es<br />
 
 and finally run gulp concat to create new blackjack.js file located in dist folder 
 
