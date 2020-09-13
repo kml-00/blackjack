@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/kml-00/blackjack/master/assets/black_jack.jpg" width="350" title="blackjack game image"></p>
+<img src="https://raw.githubusercontent.com/kml-00/blackjack/master/assets/black_jack.jpg" width="350" title="blackjack game image">
 
 # Project Title
 
