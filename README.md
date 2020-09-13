@@ -41,7 +41,7 @@ I use [Github](https://github.com) for versioning. For the versions available, s
 
 ## Authors
 
-* **KML** - *Initial work* - [kml-00](https://github.com/kml-00)
+* **KML** - [kml-00](https://github.com/kml-00)
 
 
 
