@@ -26,6 +26,7 @@ class gameView {
         this.gameMessage=document.querySelector('.gameMessage');
     }
 
+
     /* create token animation 
     parm tokenID - card id,
     parm framesArray - array of kayframes of animation 
@@ -143,6 +144,8 @@ class gameView {
     {
         this.betToken.innerHTML ='';
     }
+    // show token on the scene
+    
 
     /* ----------- gameview html elements setup END----*/
 
@@ -219,6 +222,24 @@ class gameView {
         this.dealButton.style.visibility =  "hidden";
     }
 
+    showToken()
+    {
+        for(let i=0;i<this.betContainer.childElementCount-1;i++)
+        {
+            this.betContainer.children[i].style.display="inline-block";
+        }
+    }
+    //hide token on the scene 
+    hideToken(tokenID)
+    {
+        const token = document.getElementById(tokenID);
+        if(token !== null  && token !== 'undefined')
+        {
+            token.style.display="none";
+        }
+        
+
+    }
 
     /* ----------- gameview hidding and visibling function END----*/
 
