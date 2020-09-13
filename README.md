@@ -45,7 +45,7 @@ I use [Github](https://github.com) for versioning. For the versions available, s
 
 ## Live Demo 
 
-[livedemo] (https://htmlpreview.github.io/?https://github.com/kml-00/blackjack/blob/master/index.html)
+[livedemo](https://htmlpreview.github.io/?https://github.com/kml-00/blackjack/blob/master/index.html)
 
 
 
