@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/kml-00/blackjack/master/assets/black_jack.jpg" width="350" title="blackjack game image">
+
 # Project Title
 
 Simple Blackjack game written in JS, HTML and CSS
@@ -22,9 +24,9 @@ If you would like to make some modification in the game you should donwload and 
 
  then install via node terminal gulp, gulp-concat,gulp-uglify-es
 
- npm install gulp
- npm install gulp-concat
- npm install gulp-uglify-es
+ -npm install gulp
+ -npm install gulp-concat
+ -npm install gulp-uglify-es
 
 and finally run gulp concat to create new blackjack.js file located in dist folder 
 
