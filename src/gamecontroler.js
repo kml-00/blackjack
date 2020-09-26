@@ -91,11 +91,9 @@ class gameControler {
 
     bet10= bet10=>
     {
-        if(this.isCardDeal==true)
+        if(this.isCardDeal==false)
         {
 
-        }
-        else {
             const id=this.getTokenLastID(this.token);
             this.gameview.createToken(id,"10");
             this.token.push(10);
