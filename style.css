@@ -4,9 +4,6 @@
  padding: 0;
 }
 
-html {
-
-}
 
 .cards {
     margin: 2px;
@@ -118,19 +115,15 @@ html {
     position: relative;
 }
 
-
 .croupier, .player{ 
     width: 208px;
-    height: 287px;
-    
-    
+    height: 287px;   
 }
 .croupier {
     position: absolute;
     top:40px;
     left: 50px;
 }
-
 .player{ 
     position: absolute;
     top:600px;

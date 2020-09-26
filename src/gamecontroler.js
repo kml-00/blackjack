@@ -8,6 +8,7 @@ class gameControler {
         this.betMoney=0
         this.actualBet=0
         this.token=[]
+        this.isCardDeal=false;
         this.tokenLocation={
         token10:[{left:'900px',top:'642px'},{left:'525px',top:'480px'}],
         token20:[{left:'970px',top:'642px'},{left:'600px',top:'480px'}],
@@ -57,6 +58,7 @@ class gameControler {
         this.gameview.showPlayersScore(this.cpu);
         this.gameview.buttonsVisability(false,true,true);
         this.gameview.scoreVisability(true);
+        this.isCardDeal=true;
     }
 
     
@@ -89,18 +91,27 @@ class gameControler {
 
     bet10= bet10=>
     {
-        const id=this.getTokenLastID(this.token);
-        this.gameview.createToken(id,"10");
-        this.token.push(10);
-        this.betUpdate(10);
-        const location=this.tokenLocation.token10;
-        this.gameview.betTokentAnimation(id,location);
-        this.isBetPlaced()
-        this.betTokenRemove();
+        if(this.isCardDeal==true)
+        {
+
+        }
+        else {
+            const id=this.getTokenLastID(this.token);
+            this.gameview.createToken(id,"10");
+            this.token.push(10);
+            this.betUpdate(10);
+            const location=this.tokenLocation.token10;
+            this.gameview.betTokentAnimation(id,location);
+            this.isBetPlaced()
+            this.betTokenRemove();
+        }
+        
     }
 
     bet20= bet20=>
     {
+        if(this.isCardDeal==false)
+        {
         const id=this.getTokenLastID(this.token);
         this.gameview.createToken(id,"20");
         this.token.push(20);
@@ -109,10 +120,13 @@ class gameControler {
         this.gameview.betTokentAnimation(id,location,'forward');
         this.isBetPlaced()
         this.betTokenRemove();
+        }
     }
 
     bet50= bet50=>
     {
+        if(this.isCardDeal==false)
+        {
         const id=this.getTokenLastID(this.token);
         this.gameview.createToken(id,"50");
         this.token.push(50);
@@ -121,10 +135,14 @@ class gameControler {
         this.gameview.betTokentAnimation(id,location,'forward');
         this.isBetPlaced()
         this.betTokenRemove();
+        }
     }
     //add bets 
     bet100= bet100=>
     {
+        if(this.isCardDeal==false)
+        {
+
         const id=this.getTokenLastID(this.token);
         this.gameview.createToken(id,"100");
         this.token.push(100);
@@ -133,10 +151,16 @@ class gameControler {
         this.gameview.betTokentAnimation(id,location,'forward');
         this.isBetPlaced();
         this.betTokenRemove();
+        }
     }
     //remove bets 
     undoBet=undoBet=>
     {
+
+        if(this.gameState==false)
+        {
+
+     
         let token =String(event.target.classList);
         let elem =document.getElementById(event.target.id);
         token= token.substring(6, token.length);
@@ -167,7 +191,7 @@ class gameControler {
             
         this.token.splice(event.target.id,1);
         this.gameview.betTokentAnimation(event.target.id,location,'backward');
-            
+        }   
         
     }
 
@@ -333,6 +357,8 @@ class gameControler {
         this.clearOldData();
         this.gameview.backCard();
         this.isBetPlaced();
+        this.isCardDeal=false;
+
     }
 
     
